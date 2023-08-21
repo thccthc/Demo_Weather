@@ -3,6 +3,7 @@ package sg.edu.rp.c346.id22011587.demoweather;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.loopj.android.http.AsyncHttpClient;
@@ -50,14 +51,13 @@ public class MainActivity extends AppCompatActivity {
                         Weather weather = new Weather(area, forecast);
                         alWeather.add(weather);
                     }
-                    // Create an instance of the custom adapter and set it to the ListView
-                    WeatherAdapter adapter = new WeatherAdapter(MainActivity.this, alWeather);
-                    lvWeather.setAdapter(adapter);
                 }
                 catch(JSONException e){
-                    e.printStackTrace();
                 }
                 //POINT X – Code to display List View
+                // Create an instance of the custom adapter and set it to the ListView
+                ArrayAdapter adapter = new ArrayAdapter(MainActivity.this, android.R.layout.simple_list_item_1, alWeather);
+                lvWeather.setAdapter(adapter);
 
             }//end onSuccess
         });

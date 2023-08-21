@@ -28,9 +28,8 @@ public class Weather {
 
     @Override
     public String toString() {
-        return "Weather{" +
-                "area='" + area + '\'' +
-                ", forecast='" + forecast + '\'' +
-                '}';
+        return "WEATHER" + '\n' +
+                "Area='" + area + '\n' +
+                "Forecast='" + forecast;
     }
 }
